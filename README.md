@@ -204,25 +204,4 @@ Los tiempos en milisegundos se imprimen en la tabla del programa, pero pueden va
 4. **Solubilidad antes de buscar**: los estados imposibles se rechazan con 0 expansiones.
 5. **Copia del tablero antes de insertar nodos**: en GBFS y A* se hace `const Board current = nodes[cur].state;` antes de llamar a `forEachMove`. Si no, un `push_back` puede reubicar el `vector` e invalidar la referencia que se está iterando, generando tableros corruptos y soluciones no óptimas.
 
----
-
-## 10. Limitaciones de esta versión
-
-Esta es la versión **simple a propósito**. Para hacerla corta se dejaron fuera:
-
-- pruebas unitarias automáticas;
-- logs de ASan/UBSan/LSan;
-- archivo CSV de resultados;
-- separación en carpetas y capa de compatibilidad con compiladores antiguos.
-
-Eso no cambia el resultado del experimento: los algoritmos y las métricas son los mismos que en la versión completa.
-
----
-
-## 11. Resumen para exponer en clase
-
-> "Es un 8-Puzzle con una heurística de Manhattan. Probamos tres formas de buscar: GBFS mira solo la distancia estimada, A* suma lo ya recorrido, e IDA* hace DFS por umbrales. GBFS es rápido pero no es óptimo: en el caso de 20 pasos devuelve 42. A* e IDA* devuelven 20; IDA* gasta menos memoria pero repite más trabajo."
-
----
-
-**Archivos del proyecto:** `main.cpp` y `README.md`. Eso es todo.
+`. Eso es todo.
