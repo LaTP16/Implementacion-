@@ -204,4 +204,4 @@ Los tiempos en milisegundos se imprimen en la tabla del programa, pero pueden va
 4. **Solubilidad antes de buscar**: los estados imposibles se rechazan con 0 expansiones.
 5. **Copia del tablero antes de insertar nodos**: en GBFS y A* se hace `const Board current = nodes[cur].state;` antes de llamar a `forEachMove`. Si no, un `push_back` puede reubicar el `vector` e invalidar la referencia que se está iterando, generando tableros corruptos y soluciones no óptimas.
 
-`. Eso es todo.
+
