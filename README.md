@@ -193,14 +193,3 @@ Repeticiones: 5 por caso. Compilado con GCC 6.3 usando `-O2`.
 
 Los tiempos en milisegundos se imprimen en la tabla del programa, pero pueden variar entre ejecuciones; los números de nodos son deterministas.
 
----
-
-## 9. Detalles que importan (y que se corrigieron)
-
-1. **`Move` es la dirección del hueco**, no de la ficha. Fijar la convención evita confundir el camino al reconstruirlo.
-2. **Control de fila/columna** en `applyMove`: evita el bug de "cruzar" de columna con `blank ± 1`.
-3. **Hash perfecto en base 9**: más barato y sin colisiones para este dominio.
-4. **Solubilidad antes de buscar**: los estados imposibles se rechazan con 0 expansiones.
-5. **Copia del tablero antes de insertar nodos**: en GBFS y A* se hace `const Board current = nodes[cur].state;` antes de llamar a `forEachMove`. Si no, un `push_back` puede reubicar el `vector` e invalidar la referencia que se está iterando, generando tableros corruptos y soluciones no óptimas.
-
-
