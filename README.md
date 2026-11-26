@@ -2,7 +2,6 @@
 
 Un único archivo `main.cpp` que resuelve **el mismo tablero 3×3** con tres estrategias distintas y muestra una tabla para compararlas.
 
-No hay carpetas, ni CMake, ni dependencias externas. Es la versión reducida del proyecto: toda la lógica está en un solo sitio para que sea fácil de leer y de explicar.
 
 ---
 
